@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app.xsd"
+	metadata-complete="false" version="4.0">
+	<display-name>Ch20_Member</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+
+	<filter>
+		<filter-name>EncodingFilter</filter-name>
+		<filter-class>common.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>utf-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>EncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<servlet>
+		<servlet-name>update</servlet-name>
+		<servlet-class>board.controller.UpdatePostController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>update</servlet-name>
+		<url-pattern>/updatePost.do/*</url-pattern>
+
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>insert</servlet-name>
+		<servlet-class>board.controller.InsertPostController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>insert</servlet-name>
+		<url-pattern>/insertPost.do/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>deleteChk</servlet-name>
+		<servlet-class>board.controller.DeletePostCheckController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>deleteChk</servlet-name>
+		<url-pattern>/checkDelete.do/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>delete</servlet-name>
+		<servlet-class>board.controller.DeletePostController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>delete</servlet-name>
+		<url-pattern>/deletePost.do/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>commentwriterServlet</servlet-name>
+		<servlet-class>commnet.controller.WriterCommentController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>commentwriterServlet</servlet-name>
+		<url-pattern>/writerComment.do/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>commentgetlistServlet</servlet-name>
+		<servlet-class>commnet.controller.GetListCommentController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>commentgetlistServlet</servlet-name>
+		<url-pattern>/getlistcomment.do/*</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>commentupdateServlet</servlet-name>
+		<servlet-class>commnet.controller.UpdateCommentController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>commentupdateServlet</servlet-name>
+		<url-pattern>/updatecomment.do/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>commentDeleteServlet</servlet-name>
+		<servlet-class>commnet.controller.DeleteCommentController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>commentDeleteServlet</servlet-name>
+		<url-pattern>/deletecomment.do/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>reviewListServlet</servlet-name>
+		<servlet-class>review.controller.ReviewListController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>reviewListServlet</servlet-name>
+		<url-pattern>/reviewListCon.do/*</url-pattern>
+	</servlet-mapping>
+</web-app>
